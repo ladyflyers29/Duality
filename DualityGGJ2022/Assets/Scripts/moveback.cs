@@ -4,32 +4,31 @@ using UnityEngine;
 
 public class moveback : MonoBehaviour
 {
+    static Collider[] cachedCols = new Collider[16];
     /// <summary>
     /// change monsters direction (back and forth) if it runs into a object tagged "blockTag"
     /// </summary>
-    public static int movespeed = 3;
-    public Vector3 userDirection = Vector3.right;
+    public float movespeed = 3;
+    public LayerMask collideWithLayers = int.MaxValue;
+    public string collideWithTag = "blockTag";
+    public float minTimeBeforeNextBounce = 0.1f;
 
-    public void Update()
+    float elapsedTimeSinceLastBounce;
+
+    public void FixedUpdate() 
     {
-        transform.Translate(userDirection * movespeed * Time.deltaTime);
-    }
-
-    void OnTriggerEnter(Collider collider)
-    {
-        if (collider.tag == "blockTag")
-        {
-            if (movespeed == 3)
-            {
-                movespeed = -3;
+        elapsedTimeSinceLastBounce += Time.fixedDeltaTime;
+        int numOfCollidersHit = Physics.OverlapBoxNonAlloc( transform.position, transform.localScale * 0.5f, cachedCols, transform.rotation, collideWithLayers );
+        for (int i = 0; i < numOfCollidersHit; i++) {
+            Collider colliderToCheck = cachedCols[i];
+            Debug.Log(colliderToCheck);
+            if (elapsedTimeSinceLastBounce > minTimeBeforeNextBounce && colliderToCheck.gameObject.tag == collideWithTag) {
+                elapsedTimeSinceLastBounce = 0;
+                movespeed = -movespeed;
+                Debug.DrawLine( transform.position, colliderToCheck.transform.position, Color.magenta, 0.5f );
             }
-
-            else if (movespeed == -3)
-            {
-                movespeed = 3;
-            }
-            //set velocity 0
-            //adjust the object position (the object may overlap with the block)
         }
+        transform.position += transform.forward * movespeed * Time.fixedDeltaTime;
     }
+
 }
