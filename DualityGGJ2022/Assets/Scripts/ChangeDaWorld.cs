@@ -18,8 +18,6 @@ public class ChangeDaWorld : MonoBehaviour
    // public GameObject brightcamera;
    // public GameObject darkcamera;
 
-    public AudioSource brightMusic;
-    public AudioSource darkMusic;
     GameObject[] lightWorldOnly = new GameObject[0];
     GameObject[] darkWorldOnly = new GameObject[0];
 
@@ -59,8 +57,6 @@ public class ChangeDaWorld : MonoBehaviour
                 darkWorld?.SetActive(true);
                // brightcamera?.SetActive(false);
                 //darkcamera?.SetActive(true);
-                brightMusic?.Play();
-                darkMusic?.Pause();
             }
 
             else if (brightWorld.activeSelf == false) //switching from dark world to bright world
@@ -69,8 +65,6 @@ public class ChangeDaWorld : MonoBehaviour
                 darkWorld?.SetActive(false);
               //  brightcamera?.SetActive(true);
                // darkcamera?.SetActive(false);
-                brightMusic?.Pause();
-                darkMusic?.Play();
             }
         }
     }
