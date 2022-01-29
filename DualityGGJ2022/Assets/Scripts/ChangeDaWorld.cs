@@ -49,7 +49,6 @@ public class ChangeDaWorld : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) //if "E" is pressed
         {
 
-            Debug.Log("animation play");
             isDarkWorld = !isDarkWorld;
             ChangeDaWorld.OnWorldSwitch.Invoke(); // this calls the world switch event
 

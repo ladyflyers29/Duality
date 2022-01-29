@@ -5,8 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    public GameObject creditsCanvas;
+    public GameObject mainCanvas;
+
     public void ChangeSceneByName(string name)
     {
-        SceneManager.LoadScene(name);
+        if(name == "start")
+            StartCoroutine(StartGameCoroutine());
+
+        else if (name == "credits")
+            StartCoroutine(CreditsCoroutine());
+        else if (name == "back")
+            StartCoroutine(BackCoroutine());
     }
+
+    IEnumerator StartGameCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(sceneName: "ShaneScene");
+
+    }
+
+    IEnumerator CreditsCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+        creditsCanvas.SetActive(true);
+        mainCanvas.SetActive(false);
+    }
+    IEnumerator BackCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+        mainCanvas.SetActive(true);
+        creditsCanvas.SetActive(false);
+
+    }
+
 }
