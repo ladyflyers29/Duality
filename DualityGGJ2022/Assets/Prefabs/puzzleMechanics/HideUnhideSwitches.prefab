@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item1: {fileID: 0}
   item2: {fileID: 0}
-  OneStay2Enter: 1
+  OneStay2Enter: 2
   buttonSound: {fileID: 70390153533834387}
 --- !u!1 &8959453171356775814
 GameObject:

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -299,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf27d5b939265f54f81eaea6bd909908, type: 3}
---- !u!1001 &382970589
+--- !u!1001 &641762518
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -308,7 +308,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2899996785199775672, guid: af84c8511cf23a54bb6889c5b9689ccb, type: 3}
       propertyPath: m_Name
-      value: MovingTrap
+      value: MovingTrap (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2899996785199775675, guid: af84c8511cf23a54bb6889c5b9689ccb, type: 3}
       propertyPath: m_RootOrder
@@ -316,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2899996785199775675, guid: af84c8511cf23a54bb6889c5b9689ccb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.9310961
+      value: -9.57
       objectReference: {fileID: 0}
     - target: {fileID: 2899996785199775675, guid: af84c8511cf23a54bb6889c5b9689ccb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -353,6 +353,26 @@ PrefabInstance:
     - target: {fileID: 2899996785199775675, guid: af84c8511cf23a54bb6889c5b9689ccb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899996786804179021, guid: af84c8511cf23a54bb6889c5b9689ccb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899996786804179030, guid: af84c8511cf23a54bb6889c5b9689ccb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755107496574892838, guid: af84c8511cf23a54bb6889c5b9689ccb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755107496574892838, guid: af84c8511cf23a54bb6889c5b9689ccb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755107496574892838, guid: af84c8511cf23a54bb6889c5b9689ccb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.56
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af84c8511cf23a54bb6889c5b9689ccb, type: 3}
@@ -424,17 +444,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warping
       objectReference: {fileID: 0}
+    - target: {fileID: 3009242149659246816, guid: 500f67d86561fa04e819d33f9cf953e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.23
+      objectReference: {fileID: 0}
     - target: {fileID: 4015300301043864361, guid: 500f67d86561fa04e819d33f9cf953e4, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4015300301043864361, guid: 500f67d86561fa04e819d33f9cf953e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.315511
+      value: 5.79
       objectReference: {fileID: 0}
     - target: {fileID: 4015300301043864361, guid: 500f67d86561fa04e819d33f9cf953e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7831497
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 4015300301043864361, guid: 500f67d86561fa04e819d33f9cf953e4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -480,6 +504,10 @@ PrefabInstance:
     - target: {fileID: 4592166947848776972, guid: 4f01f1651110d49468860c291a58dddb, type: 3}
       propertyPath: m_Name
       value: HideUnhideSwitches
+      objectReference: {fileID: 0}
+    - target: {fileID: 5721638898512835442, guid: 4f01f1651110d49468860c291a58dddb, type: 3}
+      propertyPath: OneStay2Enter
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6615196331703250116, guid: 4f01f1651110d49468860c291a58dddb, type: 3}
       propertyPath: m_RootOrder

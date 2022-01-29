@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ChangeDaWorld : MonoBehaviour
 {
-    public GameObject bright;
-    public GameObject dark;
+    public GameObject brightWorld; //parent object that holds bright world objects
+    public GameObject darkWorld; //parent object that hold dark world objects
 
     public GameObject brightcamera;
     public GameObject darkcamera;
@@ -16,22 +16,22 @@ public class ChangeDaWorld : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)) //if "E" is pressed
         {
-            if (bright.activeSelf == true)
+            if (brightWorld.activeSelf == true) //switching from bright world to dark world
             {
-                bright.SetActive(false);
-                dark.SetActive(true);
+                brightWorld.SetActive(false);
+                darkWorld.SetActive(true);
                 brightcamera.SetActive(false);
                 darkcamera.SetActive(true);
                 brightMusic.Play();
                 darkMusic.Pause();
             }
 
-            else if (bright.activeSelf == false)
+            else if (brightWorld.activeSelf == false) //switching from dark world to bright world
             {
-                bright.SetActive(true);
-                dark.SetActive(false);
+                brightWorld.SetActive(true);
+                darkWorld.SetActive(false);
                 brightcamera.SetActive(true);
                 darkcamera.SetActive(false);
                 brightMusic.Pause();

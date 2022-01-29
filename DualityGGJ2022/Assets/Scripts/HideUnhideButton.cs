@@ -4,31 +4,24 @@ using UnityEngine;
 
 public class HideUnhideButton : MonoBehaviour
 {
-    public GameObject item1;
+    /// <summary>
+    /// This script is from switch from one version of an object to another
+    /// example: item1 = gate up & item2 = gate down
+    /// basicly switch states of things
+    /// </summary>
+
+    public GameObject item1; 
     public GameObject item2;
 
-    public int OneStay2Enter = 1;
+    public int OneStay2Enter = 1; //1 = button 2 = pressure plate
 
     public AudioSource buttonSound;
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void OnTriggerStay(Collider col)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "ball")
+        if (col.gameObject.tag == "Player" || col.gameObject.tag == "ball")
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0)) //left click
             {
                 if (OneStay2Enter == 1)
                 {
@@ -51,7 +44,7 @@ public class HideUnhideButton : MonoBehaviour
                 
 
             }
-            if (OneStay2Enter == 2 && other.gameObject.tag == "ball" && other.gameObject.tag != "Player")
+            if (OneStay2Enter == 2 && col.gameObject.tag == "ball" && col.gameObject.tag != "Player")
             {
                 item1.SetActive(false);
                 item2.SetActive(true);

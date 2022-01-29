@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HoldItem : MonoBehaviour
 {
+    // if item is tagged 'ball' it can be held
+
     public float speed = 10;
     public bool canHold = true;
     public GameObject ball;
@@ -11,21 +13,21 @@ public class HoldItem : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) //left click
         {
             if (!canHold)
-                throw_drop();
+                throw_drop(); 
             else
                 Pickup();
         }//mause If
 
-        if (!canHold && ball)
+        if (!canHold && ball) //throw it
             ball.transform.position = guide.position;
 
     }//update
 
     //We can use trigger or Collision
-    void OnTriggerEnter(Collider col)
+    void OnTriggerEnter(Collider col) //pick up item
     {
         if (col.gameObject.tag == "ball")
             if (!ball) // if we don't have anything holding
@@ -33,9 +35,9 @@ public class HoldItem : MonoBehaviour
     }
 
     //We can use trigger or Collision
-    void OnTriggerExit(Collider col)
+    void OnTriggerExit(Collider col) 
     {
-        if (col.gameObject.tag == "ball")
+        if (col.gameObject.tag == "ball") //emptying "ball" gameobject
         {
             if (canHold)
                 ball = null;
