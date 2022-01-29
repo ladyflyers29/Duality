@@ -715,6 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c299c0d72827db45bde0e225fb534ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allThings: []
   item1: {fileID: 0}
   item2: {fileID: 0}
   OneStay2Enter: 2
@@ -816,8 +817,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7396803, y: 1, z: 1.8650856}
-  m_Center: {x: -0.08187687, y: 0, z: -0.036654994}
+  m_Size: {x: 2.4987366, y: 1, z: 2.5136578}
+  m_Center: {x: -0.17262214, y: 0, z: 0.52174747}
 --- !u!54 &8959453171356775808
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -846,6 +847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c299c0d72827db45bde0e225fb534ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allThings: []
   item1: {fileID: 0}
   item2: {fileID: 0}
   OneStay2Enter: 1
