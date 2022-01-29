@@ -971,6 +971,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 250626208, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: darkMusic
+      value: 
+      objectReference: {fileID: 1293576083}
+    - target: {fileID: 250626208, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: darkWorld
+      value: 
+      objectReference: {fileID: 539370087}
+    - target: {fileID: 250626208, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: brightMusic
+      value: 
+      objectReference: {fileID: 1350960628}
+    - target: {fileID: 250626208, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+      propertyPath: brightWorld
+      value: 
+      objectReference: {fileID: 43911748}
     - target: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
       propertyPath: m_RootOrder
       value: 3
