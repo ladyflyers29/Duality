@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,14 @@ public class HideUnhideButton : MonoBehaviour
     /// basicly switch states of things
     /// </summary>
 
-    public GameObject item1; 
-    public GameObject item2;
+    [System.Serializable] public struct ThingToTurnOff {
+        [SerializeField] public GameObject gameObject;
+        [SerializeField] public bool turnOff;
+    }
+
+    [SerializeField] public List<ThingToTurnOff> allThings = new List<ThingToTurnOff>();
+    GameObject item1;
+    GameObject item2;
 
     public int OneStay2Enter = 1; //1 = button 2 = pressure plate
 
@@ -59,15 +66,14 @@ public class HideUnhideButton : MonoBehaviour
     
     public void OnTriggerEnter(Collider other)
     {
+        if (OneStay2Enter != 2) return;
+        Debug.Log(other);
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "ball")
         {
-            if (OneStay2Enter == 2)
-            {
-                if (item1.activeSelf == true)
-                {
-                    item1.SetActive(false);
-                    item2.SetActive(true);
-                    buttonSound.Play();
+            buttonSound.Play();
+            foreach( ThingToTurnOff t in allThings ) {
+                if (t.gameObject != null) {
+                    t.gameObject.SetActive(t.turnOff);
                 }
             }
 
@@ -77,17 +83,14 @@ public class HideUnhideButton : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
+        if (OneStay2Enter != 2) return;
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "ball" )
         {
-            if (OneStay2Enter == 2)
-            {
-                if (item1.activeSelf == false)
-                {
-                    item1.SetActive(true);
-                    item2.SetActive(false);
+            foreach( ThingToTurnOff t in allThings ) {
+                if (t.gameObject != null) {
+                    t.gameObject.SetActive(!t.turnOff);
                 }
             }
-            
 
         }
     }
