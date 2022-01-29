@@ -21,7 +21,6 @@ public class moveback : MonoBehaviour
         int numOfCollidersHit = Physics.OverlapBoxNonAlloc( transform.position, transform.localScale * 0.5f, cachedCols, transform.rotation, collideWithLayers );
         for (int i = 0; i < numOfCollidersHit; i++) {
             Collider colliderToCheck = cachedCols[i];
-            Debug.Log(colliderToCheck);
             if (elapsedTimeSinceLastBounce > minTimeBeforeNextBounce && colliderToCheck.gameObject.tag == collideWithTag) {
                 elapsedTimeSinceLastBounce = 0;
                 movespeed = -movespeed;
