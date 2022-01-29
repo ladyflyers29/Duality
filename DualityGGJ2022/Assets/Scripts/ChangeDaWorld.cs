@@ -14,6 +14,9 @@ public class ChangeDaWorld : MonoBehaviour
     public GameObject brightWorld; //parent object that holds bright world objects
     public GameObject darkWorld; //parent object that hold dark world objects
 
+    public Animator anim;
+    public GameObject playerController;
+
    // public GameObject brightcamera;
    // public GameObject darkcamera;
 
@@ -30,6 +33,7 @@ public class ChangeDaWorld : MonoBehaviour
         daWorld = this;
         ChangeDaWorld.OnWorldSwitch += DoWhenWorldSwitches; // this adds a listener to the world switch event
         DoWhenWorldSwitches(); // run this right away to hide darkworld tagged stuff
+        anim = playerController.GetComponent<Animator>();
     }
 
     // Turn off all gameobjects with 'LightWorldOnly' tag if 'isDarkWorld' is set to true, and vice-versa
@@ -46,6 +50,7 @@ public class ChangeDaWorld : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)) //if "E" is pressed
         {
+            anim.Play("Camera Zoom Effect");
             isDarkWorld = !isDarkWorld;
             ChangeDaWorld.OnWorldSwitch.Invoke(); // this calls the world switch event
 
