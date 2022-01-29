@@ -35,10 +35,10 @@ public class ChangeDaWorld : MonoBehaviour
     // Turn off all gameobjects with 'LightWorldOnly' tag if 'isDarkWorld' is set to true, and vice-versa
     void DoWhenWorldSwitches() {
         foreach( GameObject g in lightWorldOnly ) {
-            g.SetActive(!isDarkWorld);
+            g?.SetActive(!isDarkWorld);
         }
         foreach( GameObject g in darkWorldOnly ) {
-            g.SetActive(isDarkWorld);
+            g?.SetActive(isDarkWorld);
         }
     }
 
