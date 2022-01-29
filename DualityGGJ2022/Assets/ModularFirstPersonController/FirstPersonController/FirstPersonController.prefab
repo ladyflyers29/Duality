@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1331121371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1331121372}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1331121372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331121371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4459864851310106429}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4459864850019384750
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,6 +46,7 @@ GameObject:
   - component: {fileID: 4459864850019384740}
   - component: {fileID: 250626208}
   - component: {fileID: 620441209929515332}
+  - component: {fileID: 2135517940}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -156,7 +187,7 @@ MonoBehaviour:
   sprintCooldown: 0.5
   sprintFOV: 80
   sprintFOVStepTime: 10
-  useSprintBar: 1
+  useSprintBar: 0
   hideBarWhenFull: 1
   sprintBarBG: {fileID: 4459864851397454648}
   sprintBar: {fileID: 4459864850888339820}
@@ -170,7 +201,7 @@ MonoBehaviour:
   crouchKey: 306
   crouchHeight: 0.75
   speedReduction: 0.5
-  enableHeadBob: 1
+  enableHeadBob: 0
   joint: {fileID: 4459864851508666808}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
@@ -188,8 +219,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brightWorld: {fileID: 0}
   darkWorld: {fileID: 0}
-  brightcamera: {fileID: 4459864851508666809}
-  darkcamera: {fileID: 0}
   brightMusic: {fileID: 0}
   darkMusic: {fileID: 0}
 --- !u!114 &620441209929515332
@@ -207,6 +236,22 @@ MonoBehaviour:
   lightWorldProfile: {fileID: 11400000, guid: f22bc32a43da8154a8d4869e243c1854, type: 2}
   darkWorldProfile: {fileID: 11400000, guid: 15b9e16e7f0ed43df963fd838cfc4efb, type: 2}
   postProcessVolume: {fileID: 125678030441559140}
+--- !u!114 &2135517940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459864850019384750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1912241bf4f514e8b78702569dd69b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  canHold: 1
+  ball: {fileID: 0}
+  guide: {fileID: 1331121372}
 --- !u!1 &4459864850190357393
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,6 +465,7 @@ GameObject:
   - component: {fileID: 4459864851310106427}
   - component: {fileID: 2640579286900946061}
   - component: {fileID: 125678030441559140}
+  - component: {fileID: 1191487226}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -439,6 +485,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4459864851551516607}
+  - {fileID: 1331121372}
   m_Father: {fileID: 4459864851508666808}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -565,11 +612,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 09c9d6d882b5b694283f85e2143f79bc, type: 2}
+  sharedProfile: {fileID: 11400000, guid: f22bc32a43da8154a8d4869e243c1854, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!95 &1191487226
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459864851310106424}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 134bde6457911b445bad426683632a97, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4459864851397454630
 GameObject:
   m_ObjectHideFlags: 0
