@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class moveback : MonoBehaviour
 {
+    /// <summary>
+    /// change monsters direction (back and forth) if it runs into a object tagged "blockTag"
+    /// </summary>
     public static int movespeed = 1;
     public Vector3 userDirection = Vector3.right;
 
