@@ -44,11 +44,11 @@ public class HideUnhideButton : MonoBehaviour
                 
 
             }
-            if (OneStay2Enter == 2 && col.gameObject.tag == "ball" && col.gameObject.tag != "Player")
-            {
-                item1.SetActive(false);
-                item2.SetActive(true);
-            }
+          //  if (OneStay2Enter == 2 && col.gameObject.tag == "ball" && col.gameObject.tag != "Player")
+           // {
+           //     item1.SetActive(false);
+           //     item2.SetActive(true);
+         //   }
 
             // Update other objects position and rotation
 
@@ -56,6 +56,7 @@ public class HideUnhideButton : MonoBehaviour
         }
     }
 
+    
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "ball")
@@ -72,6 +73,7 @@ public class HideUnhideButton : MonoBehaviour
 
         }
     }
+    
 
     public void OnTriggerExit(Collider other)
     {
