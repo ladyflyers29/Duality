@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class CameraZoom : MonoBehaviour
 {    
-//    public Animator anim;
-    public Animation anim1;
-    public GameObject playerController;
-    // Start is called before the first frame update
+    Animation anim1;
+
     void Start()
     {
-//        anim = gameObject.GetComponent<Animator>();
         anim1 = gameObject.GetComponent<Animation>();
+        ChangeDaWorld.OnWorldSwitch += PlayAnim;
     }
-    void Update()
+
+    void PlayAnim()
     {
-        if (Input.GetKeyDown(KeyCode.E)) //if "E" is pressed
-        {
-            Debug.Log("animation play");
-            anim1.Play("CameraZoomEffect");
-//            anim.Play("CameraZoomEffect");
-        } 
+        anim1.Stop();
+        anim1.Play("CameraZoomEffect");
     }
 }
