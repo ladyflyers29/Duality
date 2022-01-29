@@ -7,7 +7,7 @@ public class moveback : MonoBehaviour
     /// <summary>
     /// change monsters direction (back and forth) if it runs into a object tagged "blockTag"
     /// </summary>
-    public static int movespeed = 1;
+    public static int movespeed = 3;
     public Vector3 userDirection = Vector3.right;
 
     public void Update()
@@ -19,14 +19,14 @@ public class moveback : MonoBehaviour
     {
         if (collider.tag == "blockTag")
         {
-            if (movespeed == 1)
+            if (movespeed == 3)
             {
-                movespeed = -1;
+                movespeed = -3;
             }
 
-            else if (movespeed == -1)
+            else if (movespeed == -3)
             {
-                movespeed = 1;
+                movespeed = 3;
             }
             //set velocity 0
             //adjust the object position (the object may overlap with the block)
