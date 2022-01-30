@@ -58,10 +58,11 @@ Shader "Unlit/WarpShader" {
 
             fixed4 frag (v2f i) : SV_Target {
                 i.normal = normalize(i.normal);
+                float timeadd = (sin(_Time.x * 1000) * 0.1);
                 float fresnel = saturate( dot(i.normal, i.viewDir) );
                 float fresnelWarp = pow( fresnel, _FresnelExp );
                 float fresnelCenter = pow( fresnel, _FresnelCenter );
-                float fresnelEdge = pow( fresnel, _FresnelEdge );
+                float fresnelEdge = pow( fresnel + timeadd, _FresnelEdge );
 
                 float2 screenUV = i.screenPos.xy / i.screenPos.w;
 			    half4 c = tex2D (_GrabTexture, screenUV + fresnelWarp);

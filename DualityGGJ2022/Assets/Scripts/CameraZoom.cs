@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class CameraZoom : MonoBehaviour
 {    
-    Animation anim1;
+    public AnimationCurve fovOverTime;
+    float elapsed;
+    float initialfov;
+    Camera cam;
 
     void Start()
     {
-        anim1 = gameObject.GetComponent<Animation>();
+        cam = GetComponent<Camera>();
+        initialfov = cam.fieldOfView;
         ChangeDaWorld.OnWorldSwitch += PlayAnim;
+    }
+
+    void Update() {
+        elapsed += Time.deltaTime;
+        cam.fieldOfView = initialfov + fovOverTime.Evaluate( elapsed );
     }
 
     void PlayAnim()
     {
-        anim1.Stop();
-        anim1.Play("CameraZoomEffect");
+        elapsed = 0;
     }
 }
