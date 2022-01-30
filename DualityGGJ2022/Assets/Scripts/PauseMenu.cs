@@ -36,12 +36,14 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 0;
             play = false;
             PauseMenuScreen.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
         else if (!play)
         {
             Time.timeScale = 1;
             play = true;
             PauseMenuScreen.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
