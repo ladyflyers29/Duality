@@ -7,7 +7,6 @@ public class quitGame : MonoBehaviour
     public void MenuButton()
     {
             Debug.Log("Quit mothas");
-            UnityEditor.EditorApplication.isPlaying = false;
             Application.Quit();
     }
 }
