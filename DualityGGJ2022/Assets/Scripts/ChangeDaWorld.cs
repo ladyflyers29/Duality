@@ -10,6 +10,7 @@ public class ChangeDaWorld : MonoBehaviour
     public static ChangeDaWorld daWorld { get; private set; } // Global DaWorld access, from any script
     public static bool isDarkWorld { get; private set; }
     public static event Action OnWorldSwitch; // Global thingy that other scripts can listen for
+    public GameObject playerRespondPoint;
 
     Transform[] allObjects;
 
@@ -46,6 +47,10 @@ public class ChangeDaWorld : MonoBehaviour
         {
             isDarkWorld = !isDarkWorld;
             ChangeDaWorld.OnWorldSwitch.Invoke(); // this calls the world switch event
+        }
+        if (Input.GetKeyDown(KeyCode.R)) //if 'R' is pressed
+        {
+            transform.position = playerRespondPoint.transform.position;
         }
     }
 }
