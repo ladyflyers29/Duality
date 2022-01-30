@@ -35,5 +35,5 @@ Material:
     - _ShakeTime: 0.175
     - _ShakeWindspeed: 0.364
     m_Colors:
-    - _Color: {r: 0.06628696, g: 0.3584906, b: 0.14363497, a: 1}
+    - _Color: {r: 0.32156864, g: 0.20442626, b: 0.12941179, a: 1}
   m_BuildTextureStacks: []
