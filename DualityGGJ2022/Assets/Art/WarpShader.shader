@@ -31,7 +31,6 @@ Shader "Unlit/WarpShader" {
 
             struct v2f {
                 float4 vertex : SV_POSITION;
-                float fresnel : TEXCOORD0;
                 half4 wpos      : TEXCOORD1;
                 half3 normal : NORMAL;
                 half3 viewDir : TEXCOORD2;
