@@ -63,12 +63,7 @@ public class Clickable : MonoBehaviour
                     {
                         item1.SetActive(false);
                         item2.SetActive(true);
-                        item1.SetActive(false);
-                        item2.SetActive(true);
-                        item1.SetActive(false);
-                        item2.SetActive(true);
-                        item1.SetActive(false);
-                        item2.SetActive(true);
+                       
                         buttonSound.Play();
                     }
 
@@ -76,12 +71,7 @@ public class Clickable : MonoBehaviour
                     {
                         item1.SetActive(true);
                         item2.SetActive(false);
-                        item1.SetActive(true);
-                        item2.SetActive(false);
-                        item1.SetActive(true);
-                        item2.SetActive(false);
-                        item1.SetActive(true);
-                        item2.SetActive(false);
+                       
                         buttonSound.Play();
                     }
 
