@@ -30,7 +30,6 @@ public class HideUnhideButton : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (OneStay2Enter != 2) return;
-        Debug.Log(other);
         if (other.gameObject.tag == "ball")
         {
             buttonSound.Play();

@@ -11,34 +11,32 @@ public class ChangeDaWorld : MonoBehaviour
     public static bool isDarkWorld { get; private set; }
     public static event Action OnWorldSwitch; // Global thingy that other scripts can listen for
 
-    public GameObject brightWorld; //parent object that holds bright world objects
-    public GameObject darkWorld; //parent object that hold dark world objects
-
-
-   // public GameObject brightcamera;
-   // public GameObject darkcamera;
-
-    GameObject[] lightWorldOnly = new GameObject[0];
-    GameObject[] darkWorldOnly = new GameObject[0];
+    Transform[] allObjects;
 
     void Awake() {
-        lightWorldOnly = GameObject.FindGameObjectsWithTag(LIGHTWORLDONLY);
-        darkWorldOnly = GameObject.FindGameObjectsWithTag(DARKWORLDONLY);
+        allObjects = GameObject.FindObjectsOfType<Transform>(true);
         
         if (daWorld != null) throw new System.Exception("More than one "+nameof(ChangeDaWorld)+" OH NOES");
         daWorld = this;
         ChangeDaWorld.OnWorldSwitch += DoWhenWorldSwitches; // this adds a listener to the world switch event
-        DoWhenWorldSwitches(); // run this right away to hide darkworld tagged stuff
-
+        OnWorldSwitch.Invoke();
     }
 
     // Turn off all gameobjects with 'LightWorldOnly' tag if 'isDarkWorld' is set to true, and vice-versa
     void DoWhenWorldSwitches() {
-        foreach( GameObject g in lightWorldOnly ) {
-            g?.SetActive(!isDarkWorld);
+        if (isDarkWorld) {
+            foreach( Transform g in allObjects ) {
+                if (g == null) continue;
+                if (g.gameObject.tag == LIGHTWORLDONLY) g.gameObject.SetActive(false);
+                if (g.gameObject.tag == DARKWORLDONLY) g.gameObject.SetActive(true);
+            }
         }
-        foreach( GameObject g in darkWorldOnly ) {
-            g?.SetActive(isDarkWorld);
+        else {
+            foreach( Transform g in allObjects ) {
+                if (g == null) continue;
+                if (g.gameObject.tag == LIGHTWORLDONLY) g.gameObject.SetActive(true);
+                if (g.gameObject.tag == DARKWORLDONLY) g.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -46,26 +44,8 @@ public class ChangeDaWorld : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)) //if "E" is pressed
         {
-
             isDarkWorld = !isDarkWorld;
             ChangeDaWorld.OnWorldSwitch.Invoke(); // this calls the world switch event
-
-            if (brightWorld == null || darkWorld == null) return; // early-exit here if there is no bright or dark world
-            if (brightWorld.activeSelf == true) //switching from bright world to dark world
-            {
-                brightWorld?.SetActive(false);
-                darkWorld?.SetActive(true);
-               // brightcamera?.SetActive(false);
-                //darkcamera?.SetActive(true);
-            }
-
-            else if (brightWorld.activeSelf == false) //switching from dark world to bright world
-            {
-                brightWorld?.SetActive(true);
-                darkWorld?.SetActive(false);
-              //  brightcamera?.SetActive(true);
-               // darkcamera?.SetActive(false);
-            }
         }
     }
 }
