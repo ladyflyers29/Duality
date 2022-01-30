@@ -18,8 +18,6 @@ Shader "Unlit/WarpShader" {
 
         Pass {
             CGPROGRAM
-// Upgrade NOTE: excluded shader from DX11; has structs without semantics (struct appdata members worldNormal)
-#pragma exclude_renderers d3d11
             #pragma vertex vert
             #pragma fragment frag
             #include "UnityCG.cginc"
