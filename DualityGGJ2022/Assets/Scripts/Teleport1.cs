@@ -6,6 +6,8 @@ public class Teleport1 : MonoBehaviour
 {
     public Transform Destination;
 
+    public AudioSource warpSound;
+
 
    
 
@@ -21,6 +23,7 @@ public class Teleport1 : MonoBehaviour
            
                 other.transform.position = Destination.transform.position;
                 other.transform.rotation = Destination.transform.rotation;
+            warpSound.Play();
             
 
             // Update other objects position and rotation
@@ -39,8 +42,9 @@ public class Teleport1 : MonoBehaviour
             
                 other.transform.position = Destination.transform.position;
                 other.transform.rotation = Destination.transform.rotation;
+            warpSound.Play();
 
-            
+
         }
     }
 }
