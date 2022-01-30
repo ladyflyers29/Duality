@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShaneScene.unity
     guid: 101151bbf64ff4841b5065e3bf890b88
+  - enabled: 1
+    path: Assets/Scenes/ShaneScene 1.unity
+    guid: e6ac0ded5ccb5854f88657223b518fcd
   m_configObjects: {}
