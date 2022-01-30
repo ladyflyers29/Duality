@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class quitGame : MonoBehaviour
 {
-    public void MenuButton(string name)
+    public void MenuButton()
     {
-
-        if (name == "exit")
-        {
-            Application.Quit();
             Debug.Log("Quit mothas");
-        }
+            UnityEditor.EditorApplication.isPlaying = false;
+            Application.Quit();
     }
 }
