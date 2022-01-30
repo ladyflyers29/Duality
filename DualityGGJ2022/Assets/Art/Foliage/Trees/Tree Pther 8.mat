@@ -30,10 +30,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _Cutoff: 0.5
-    - _ShakeBending: 0.052
-    - _ShakeDisplacement: 0.811
-    - _ShakeTime: 0.225
-    - _ShakeWindspeed: 0.41
+    - _ShakeBending: 0
+    - _ShakeDisplacement: 0
+    - _ShakeTime: 0
+    - _ShakeWindspeed: 0
     m_Colors:
     - _Color: {r: 0.26415092, g: 0.17683832, b: 0.123602696, a: 1}
   m_BuildTextureStacks: []

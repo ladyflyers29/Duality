@@ -51,7 +51,7 @@ Material:
     - _SunSpecularExponent: 1
     - _VertexNormalDelta: 0.01
     - _Wave1Amplitude: 0.16
-    - _Wave1Direction: 0.382
+    - _Wave1Direction: 0.266
     - _Wave1Speed: 1
     - _Wave1Wavelength: 5.58
     - _Wave2Amplitude: 0.15
